@@ -22,7 +22,6 @@ class Payment(object):
 
         if not data:
             return
-        # print(data)
 
         self.customer_id = int(data["customer_id"])
         self.date = parse(data["date"])
@@ -57,6 +56,6 @@ class Payment(object):
         if hasattr(self, 'card'):
             return self.card.status == "processed"
         elif hasattr(self, 'bank'):
-            return True
+            return self.bank.status == "processed"
         else:
             raise Exception("Payment method not valid")

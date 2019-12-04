@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("csv_path", help="Path to the payments CSV file")
-    parser.add_argument("source", help="The source of the payment, currently only 'card' is supported")
+    parser.add_argument("source", help="The source of the payment, currently only 'card' and 'bank' is supported")
     parser.add_argument("share_price", type=Decimal, help="Share price to generate share orders for e.g. '1.30'")
     args = parser.parse_args()
 

@@ -6,7 +6,7 @@ from bricklane_platform.models.bank import Bank
 
 
 class TestBankPayment(unittest.TestCase):
-    def test_init(self):
+    def test_bank_init(self):
         payment = Payment()
         self.assertIsNone(payment.customer_id)
         self.assertIsNone(payment.date)
@@ -14,7 +14,7 @@ class TestBankPayment(unittest.TestCase):
         self.assertIsNone(payment.fee)
         self.assertIsNone(payment.bank_account_id)
 
-    def test_init_with_data(self):
+    def test_bank_init_with_data(self):
 
         data = {
             "amount": "2000",
@@ -37,10 +37,9 @@ class TestBankPayment(unittest.TestCase):
         self.assertEqual(bank.bank_account_id, 45)
         self.assertEqual(bank.status, "processed")
 
-    def test_is_successful(self):
+    def test_bank_is_successful(self):
         bank = Bank()
         bank.status = "processed"
         payment = Payment()
         payment.bank = bank
-
         self.assertTrue(payment.is_successful())
