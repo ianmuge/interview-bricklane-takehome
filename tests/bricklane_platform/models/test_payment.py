@@ -9,12 +9,12 @@ class TestPayment(unittest.TestCase):
 
     def test_init(self):
         payment = Payment()
-
         self.assertIsNone(payment.customer_id)
         self.assertIsNone(payment.date)
         self.assertIsNone(payment.amount)
         self.assertIsNone(payment.fee)
         self.assertIsNone(payment.card_id)
+        self.assertIsNone(payment.bank_account_id)
 
     def test_init_with_data(self):
 
